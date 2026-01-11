@@ -9,6 +9,18 @@ interface ProductPageProps {
   params: { id: string };
 }
 
+export async function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+    { id: '5' },
+  ];
+}
+
+export const dynamicParams = true;
+
 export default async function ProductPage({ params }: ProductPageProps) {
   let product;
   
@@ -48,7 +60,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
             <div className="flex flex-col">
               <div className="flex-1">
-                <p className="text-sm text-gray-500 uppercase tracking-wide mb-2">
+                <p className="text-sm text-gray-500 uppercase tracking-wide mb-2 capitalize">
                   {product.category}
                 </p>
                 

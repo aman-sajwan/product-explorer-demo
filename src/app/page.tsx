@@ -1,12 +1,9 @@
-import { getProducts, getCategories } from '@/lib/api';
-import { ProductsClient } from '@/components/products/ProductsClient';
+import { ProductsContainer } from "./products/ProductsContainer";
 
-export default async function Home() {
-  const [products, categories] = await Promise.all([
-    getProducts(),
-    getCategories(),
-  ]);
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 
+export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm sticky top-0 z-10">
@@ -21,13 +18,13 @@ export default async function Home() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <ProductsClient initialProducts={products} categories={categories} />
+        <ProductsContainer />
       </main>
 
       <footer className="bg-white border-t mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <p className="text-center text-gray-500 text-sm">
-            Built with Next.js , TypeScript & Tailwind CSS
+            Built with Next.js 13, TypeScript & Tailwind CSS
           </p>
         </div>
       </footer>
