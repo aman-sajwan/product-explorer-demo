@@ -48,7 +48,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
             <div className="flex flex-col">
               <div className="flex-1">
-                <p className="text-sm text-gray-500 uppercase tracking-wide mb-2 capitalize">
+                <p className="text-sm text-gray-500 uppercase tracking-wide mb-2">
                   {product.category}
                 </p>
                 
